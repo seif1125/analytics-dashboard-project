@@ -1,5 +1,5 @@
 
-@import "tailwindcss";
+
 
 
 
@@ -15,7 +15,7 @@
 #root {
   max-width: 1440px;
   margin: 0 ;
-  padding: 2rem;
+  
   text-align: center;
   width: 100%;
   background-color: #f9f9f9;
@@ -57,7 +57,10 @@
 .read-the-docs {
   color: #888;
 }
-
+li.recharts-legend-item.legend-item-0 {
+    display: none !important;
+    height: 0px;
+}
 
 @media (max-width:512px) {
   #root {
@@ -68,5 +71,7 @@
   width: 100%;
   background-color: #f9f9f9;
 }
-
+}
+svg.recharts-surface {
+    padding: 1rem 0px;
 }

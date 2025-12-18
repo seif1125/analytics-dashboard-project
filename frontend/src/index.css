@@ -1,12 +1,16 @@
 
-@import "tailwindcss";
-
-/* This forces Tailwind to scan your React files */
-@source "./**/*.{js,ts,jsx,tsx}";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* FORCE SCAN: This tells Tailwind exactly where your React code is */
+@source "../src/**/*.{ts,tsx,js,jsx}";
 
 @theme {
-  --breakpoint-tablet: 900px;
+  /* Manual override for breakpoints to ensure they exist in the build */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
 }
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
