@@ -1,0 +1,30 @@
+import express, { Request, Response } from 'express';
+import cors from 'cors';
+import analyticsRouter from './routes/analytics.route';
+import usersRouter from './routes/user.route';
+// Import your Redis/caching service here later
+
+const app = express();
+
+// Global Middleware
+app.use(express.json()); // Body parser middleware
+
+app.use(cors({
+  origin: 'http://localhost:5173', // Allow your React app
+  methods: ['GET', 'POST'],        // Allow these methods
+  credentials: true                // Allow cookies/headers if needed
+}));
+// Simple Health Check Route
+app.get('/health', (req: Request, res: Response) => {
+  res.status(200).json({ status: 'ok', uptime: process.uptime() });
+});
+app.use('/api/v1/analytics', analyticsRouter);
+app.use('/api/v1/', usersRouter);
+// Error Handling Middleware (Best practice: placed last)
+// We will build a more complex one later
+app.use((err: Error, req: Request, res: Response, next: express.NextFunction) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+export default app;
