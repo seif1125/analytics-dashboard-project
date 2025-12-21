@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getInsights, getStats , getHeatmapStats} from '../utils';
+import { getHeatmapStats, getInsights, getStats , getHeatmapStats as getTopReferrals} from '../utils';
+import type { ReferralStats } from '../types';
 
 export const useUserData = () => {
  
@@ -24,3 +25,15 @@ export const useHeatmapData = () => {
       staleTime: 1000 * 60 * 5, 
     });
   }
+
+export const useReferralsData = () => {
+  // Explicitly tell useQuery to expect ReferralStats
+  return useQuery<ReferralStats, Error>({
+    queryKey: ['referralsData'],
+    queryFn: async () => {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}referrals`);
+      if (!response.ok) throw new Error('Failed to fetch referrals');
+      return response.json();
+    },
+  });
+};

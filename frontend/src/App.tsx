@@ -5,6 +5,7 @@ import './index.css';
 import Sidebar from './components/SideBarMenu';
 import { BrowserInsights } from './components/BrowserInsights';
 import { UsersTimeHeatmap } from './components/UsersTimeHeatmap';
+import  { TopReferrals } from './components/TopReferrals';
 
 // 1. Lazy load the RetentionChart component
 const LazyRetentionChart = React.lazy(() => import('./components/RetentionChart'));
@@ -26,6 +27,7 @@ function App() {
           <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm h-full flex flex-col gap-8">
             <BrowserInsights/>
             <UsersTimeHeatmap/>
+            <TopReferrals/>
           </div>
           
           

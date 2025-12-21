@@ -50,3 +50,17 @@ export interface HeatmapRow {
   label: string;     // e.g., "12Pm"
   data: number[];    // Array of 7-8 intensity values [0, 1, 2]
 }
+
+export interface ReferralPage {
+    id: number;
+    label: string;
+    value: number;
+    color: string;
+}
+
+export interface ReferralStats {
+    totalViews: number;
+    growthRate: number;
+    timeLabel: string;
+    pages: ReferralPage[];
+}

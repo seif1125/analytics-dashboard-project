@@ -13,3 +13,5 @@ import type { MenuItem } from '../types';
 
   export const sidebarClasses = `
     fixed inset-y-0 left-0 z-50 bg-white border-r border-gray-200 transition-all duration-300 ease-in-out`;
+
+     export const weekdays = ["S", "M", "T", "W", "T", "F", "S"];

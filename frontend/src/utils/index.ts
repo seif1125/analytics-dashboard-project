@@ -1,4 +1,4 @@
-import type { BrowserData, DownloadsDataPoint,HeatmapRow,RetentionDataPoint,StatCardData,User } from '../types/index';
+import type { BrowserData, DownloadsDataPoint,HeatmapRow,ReferralPage,ReferralStats,RetentionDataPoint,StatCardData,User } from '../types/index';
 
 
 export const fetchTotalDownloads = async (): Promise<DownloadsDataPoint[]> => {
@@ -29,6 +29,7 @@ export const getUser=async ():Promise<User>=>{
 }
 
 
+
 export const getStats=async ():Promise<StatCardData[]>=>{
 
   const response=await fetch(`${import.meta.env.VITE_API_BASE_URL}stats`);
@@ -55,3 +56,19 @@ export const getHeatmapStats=async ():Promise<HeatmapRow[]>=>{
   }
   return response.json();
 }
+
+export const getIntensityClass = (value: number) => {
+    switch (value) {
+      case 2: return 'bg-emerald-400'; 
+      case 1: return 'bg-emerald-200'; 
+      default: return 'bg-slate-100';  
+    }
+  };
+
+ export const getTopReferrals=async ():Promise<ReferralStats>=>{
+
+  const response=await fetch(`${import.meta.env.VITE_API_BASE_URL}referrals`)  
+  if (!response.ok) {
+    throw new Error('Failed to fetch  data');
+  }
+  return response.json();}
