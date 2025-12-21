@@ -2,6 +2,8 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import analyticsRouter from './routes/analytics.route';
 import usersRouter from './routes/user.route';
+import router from './routes/routes';
+
 // Import your Redis/caching service here later
 
 const app = express();
@@ -19,9 +21,8 @@ app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'ok', uptime: process.uptime() });
 });
 app.use('/api/v1/analytics', analyticsRouter);
-app.use('/api/v1/', usersRouter);
-// Error Handling Middleware (Best practice: placed last)
-// We will build a more complex one later
+app.use('/api/v1/', [usersRouter,router]);
+
 app.use((err: Error, req: Request, res: Response, next: express.NextFunction) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');

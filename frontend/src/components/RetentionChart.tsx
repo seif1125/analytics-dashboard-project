@@ -3,13 +3,13 @@ import { useMonthlyRetention } from '../hooks/useAnalyticsData';
 const RetentionChart: React.FC = () => {
     const { data, isLoading, isError } = useMonthlyRetention();
 
-    if (isLoading) return <div className="p-4 bg-white rounded shadow">Calculating retention cohorts...</div>;
-    if (isError) return <div className="p-4 bg-red-100 text-red-700 rounded shadow">Error loading retention.</div>;
+    if (isLoading) return <div className="p-4 h-[450px] bg-white rounded shadow">Calculating retention cohorts...</div>;
+    if (isError) return <div className="p-4 h-[450px] bg-red-100 text-red-700 rounded shadow">Error loading retention.</div>;
     if (!data) return null;
 
     return (
-        <div className=" p-4 mt-16 bg-white rounded-lg shadow-xl h-[450px]">
-            <h3 className="text-lg font-medium text-start mb-4">M+1 User Retention by Cohort</h3>
+        <div className=" p-6 mt-16 bg-white rounded-lg shadow-xl h-[450px]">
+            <h3 className="text-lg font-medium text-gray-900 text-start mb-4">M+1 User Retention by Cohort</h3>
             <table className="min-w-full divide-y !h-[300px] !min-h-[200px]! border rounded-lg divide-gray-200">
                 <thead className="bg-indigo-500">
                     <tr>

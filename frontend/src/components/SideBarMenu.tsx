@@ -24,7 +24,7 @@ return (
     </div>
 
     {/* 2. The Sidebar */}
-    <aside className="w-64  md:fixed! hidden! top-0 left-0 bottom-0 left-0 z-50 bg-white border-r border-gray-200 transition-transform transform">
+    <aside className=" desktop-sidebar w-64  md:fixed! hidden! top-0 left-0 bottom-0  z-50 bg-white border-r border-gray-200 transition-transform transform">
       <div className="flex flex-col h-full">
         {/* Logo Section */}
         <div className="h-20 flex items-center px-6 border-b border-gray-50 shrink-0">
@@ -74,7 +74,7 @@ return (
         {/* Logo Section */}
         <div className="h-20 flex items-center px-6 border-b border-gray-50 shrink-0">
           <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-            
+            X
           </div>
           <span className="ml-12 font-bold text-xl text-indigo-900 tracking-tight uppercase">Vyzor</span>
         </div>

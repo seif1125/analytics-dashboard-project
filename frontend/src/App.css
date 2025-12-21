@@ -20,7 +20,9 @@
   width: 100%;
   background-color: #f9f9f9;
 }
-
+.desktop-sidebar{
+  display:fixed;
+}
 
 .logo {
   height: 6em;
@@ -70,6 +72,9 @@ li.recharts-legend-item.legend-item-0 {
   text-align: center;
   width: 100%;
   background-color: #f9f9f9;
+}
+.desktop-sidebar{
+    display:none;
 }
 }
 svg.recharts-surface {
