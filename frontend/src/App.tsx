@@ -1,40 +1,43 @@
-import './App.css';
-import React, { Suspense } from 'react'; // Import React and Suspense
-import DownloadsChart from './components/DownloadsChart';
-import './index.css';
-import Sidebar from './components/SideBarMenu';
-import { BrowserInsights } from './components/BrowserInsights';
-import { UsersTimeHeatmap } from './components/UsersTimeHeatmap';
-import  { TopReferrals } from './components/TopReferrals';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-// 1. Lazy load the RetentionChart component
-const LazyRetentionChart = React.lazy(() => import('./components/RetentionChart'));
-const StatCardsData = React.lazy(() => import('./components/StatCardsData').then(module => ({ default: module.StatCardsData })));
+// Pages & Components
+import { Login } from './pages/Login';
+import  DashboardLayout  from './pages/DashboardLayout';
+import { ProtectedRoutes } from './components/ProtectedRoutes';
+
+// Create a client for React Query
+const queryClient = new QueryClient();
 
 function App() {
- return (
-<div className="flex min-h-screen bg-gray-50">
-    <Sidebar />
-    <main className="flex-1 flex flex-col p-8 space-y-8 overflow-y-auto">
-        <div className="flex md:flex-row flex-col flex-grow flex-1 space-y-8 max-w-7xl mx-auto w-full">
-         <Suspense fallback={<div className="p-4 bg-white rounded shadow h-full">Loading ...</div>}>
-        <div className="flex flex-col flex-1 space-y-8">
-        <StatCardsData/>
-        <DownloadsChart />
-        <LazyRetentionChart />
-        </div>
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Router>
+        <Routes>
+          {/* Public Route */}
+          <Route path="/login" element={<Login />} />
+
+          {/* Protected Routes - Wrapped in Layout */}
+          <Route 
+            path="/dashboard" 
+            element={
+              <ProtectedRoutes>
+                <DashboardLayout />
+              </ProtectedRoutes>
+            }
+          >
+         
+          </Route>
+
+          {/* Redirect root to login or dashboard */}
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
           
-          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm h-full flex flex-col gap-8">
-            <BrowserInsights/>
-            <UsersTimeHeatmap/>
-            <TopReferrals/>
-          </div>
-          
-          
-        </Suspense>
-        </div>
-    </main>
-</div>
+          {/* 404 Catch-all */}
+          <Route path="*" element={<div className="p-10">404 - Not Found</div>} />
+        </Routes>
+      </Router>
+    </QueryClientProvider>
   );
 }
+
 export default App;

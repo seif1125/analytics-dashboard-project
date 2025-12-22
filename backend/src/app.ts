@@ -3,6 +3,7 @@ import cors from 'cors';
 import analyticsRouter from './routes/analytics.route';
 import usersRouter from './routes/user.route';
 import router from './routes/routes';
+import connectDB from './config/db';
 
 // Import your Redis/caching service here later
 
@@ -10,7 +11,7 @@ const app = express();
 
 // Global Middleware
 app.use(express.json()); // Body parser middleware
-
+connectDB();
 app.use(cors({
   origin: 'http://localhost:5173', // Allow your React app
   methods: ['GET', 'POST'],        // Allow these methods

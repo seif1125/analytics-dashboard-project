@@ -64,3 +64,39 @@ export interface ReferralStats {
     timeLabel: string;
     pages: ReferralPage[];
 }
+
+// Define the structure for individual device data
+export interface DeviceSession {
+  label: string;
+  value: number;
+  color: string;
+}
+
+// Define the overall API response structure
+export interface SessionsByDeviceData {
+  totalAudience: number;
+  devices: DeviceSession[];
+}
+
+export interface CountryVisitor {
+  id: number;
+  name: string;
+  isoCode: string; // Used to match file name in assets/flags folder
+  visitors: number;
+  growth: number;
+  isUp: boolean;
+}
+
+export interface CountriesStats {
+  data: CountryVisitor[];
+}
+
+export interface AnalyticsDataPoint {
+  date: string;     // ISO Date or Month Name
+  visitors: number; // For the Bars
+  sessions: number; // For the Curved Line
+}
+
+export interface ChartStats {
+  data: AnalyticsDataPoint[];
+}

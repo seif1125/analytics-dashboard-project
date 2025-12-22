@@ -1,4 +1,4 @@
-import type { BrowserData, DownloadsDataPoint,HeatmapRow,ReferralPage,ReferralStats,RetentionDataPoint,StatCardData,User } from '../types/index';
+import type { BrowserData, ChartStats, CountriesStats, DownloadsDataPoint,HeatmapRow,ReferralPage,ReferralStats,RetentionDataPoint,SessionsByDeviceData,StatCardData,User } from '../types/index';
 
 
 export const fetchTotalDownloads = async (): Promise<DownloadsDataPoint[]> => {
@@ -72,3 +72,27 @@ export const getIntensityClass = (value: number) => {
     throw new Error('Failed to fetch  data');
   }
   return response.json();}
+
+export const getDevicesData=async ():Promise<SessionsByDeviceData>=>{     
+  const response=await fetch(`${import.meta.env.VITE_API_BASE_URL}devices`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch  data');
+  }
+  return response.json();  
+}
+
+export const getCountryVisitorsData=async ():Promise<CountriesStats>=>{     
+  const response=await fetch(`${import.meta.env.VITE_API_BASE_URL}visitors`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch  data');
+  }
+  return response.json();  
+}
+
+export const getAudienceMetricsData=async ():Promise<ChartStats[]>=>{     
+  const response=await fetch(`${import.meta.env.VITE_API_BASE_URL}audience-metrics`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch audience metrics data');
+  }
+  return response.json();  
+}
