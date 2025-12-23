@@ -9,9 +9,14 @@ const connectDB = async () => {
     const uri = process.env.MONGO_URI;
     if (!uri) throw new Error("MONGO_URI is not defined in .env file");
 
-    const conn = await mongoose.connect(uri);
+ const conn=mongoose.connect(uri, {
+  maxPoolSize: 10,
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
+  family: 4, // Use IPv4
+});
     
-    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
+    console.log(`✅ MongoDB Connected: `);
   } catch (error) {
     console.error(`❌ Connection Error: ${error instanceof Error ? error.message : error}`);
     process.exit(1);
