@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { getAudienceMetricsData, getCampaigns, getCountryVisitorsData, getDevicesData, getHeatmapStats, getInsights, getStats , getTopReferrals} from '../utils';
+import { getAudienceMetricsData, getCampaigns, getCountryVisitorsData, getDevicesData, getHeatmapStats, getInsights, getStats } from '../utils';
 import type {  ReferralStats } from '../types';
 
 export const useUserData = () => {

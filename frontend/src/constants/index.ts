@@ -1,4 +1,4 @@
-  import { Home, Grid, Layers, FileText, LayoutGrid, Moon, LogOut, UserCog, Menu, X } from 'lucide-react';
+  import { Home, Grid, Layers, FileText, LayoutGrid, } from 'lucide-react';
 import type { MenuItem } from '../types';
   
   

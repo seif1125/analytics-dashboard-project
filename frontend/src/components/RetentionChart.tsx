@@ -19,7 +19,7 @@ const RetentionChart: React.FC = () => {
                     </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                    {data.map((item, index) => (
+                    {data.map((item) => (
                         <tr key={item.cohort}>
                             <td className=" text-start px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.cohort}</td>
                             <td className="text-start px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.initialUsers.toLocaleString()}</td>

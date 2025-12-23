@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 import { useDeviceData } from "../hooks/useData";
 
@@ -23,7 +23,11 @@ export const DevicesChart = () => {
         <ResponsiveContainer width="100%" height={250}>
           <PieChart>
             <Pie
-              data={data.devices}
+              data={data.devices.map(device => ({
+                name: device.label,
+                value: device.value,
+                color: device.color,
+              }))}
               cx="50%"
               cy="50%"
               innerRadius={70}
