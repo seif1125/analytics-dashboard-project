@@ -1,4 +1,4 @@
-import type { BrowserData, ChartStats, CountriesStats, DownloadsDataPoint,HeatmapRow,ReferralPage,ReferralStats,RetentionDataPoint,SessionsByDeviceData,StatCardData,User } from '../types/index';
+import type { BrowserData, ChartStats, CountriesStats, DownloadsDataPoint,HeatmapRow,ReferralStats,RetentionDataPoint,SessionsByDeviceData,StatCardData,User ,CampaignData} from '../types/index';
 
 
 export const fetchTotalDownloads = async (): Promise<DownloadsDataPoint[]> => {
@@ -95,4 +95,13 @@ export const getAudienceMetricsData=async ():Promise<ChartStats[]>=>{
     throw new Error('Failed to fetch audience metrics data');
   }
   return response.json();  
+}
+
+export const getCampaigns=async ():Promise<CampaignData[]>=>{
+
+  const response=await fetch(`${import.meta.env.VITE_API_BASE_URL}campaigns`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch campaigns data');
+  }
+  return response.json();
 }

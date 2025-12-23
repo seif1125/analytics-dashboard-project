@@ -100,3 +100,16 @@ export interface AnalyticsDataPoint {
 export interface ChartStats {
   data: AnalyticsDataPoint[];
 }
+export interface CampaignData {
+  _id: string;
+  provider: {
+    _id: string;
+    name: string;
+    role: string;
+    image: string;
+  };
+  sales: number;
+  goal: number;
+  status: 'On process' | 'Achieved';
+  createdAt: string;
+}

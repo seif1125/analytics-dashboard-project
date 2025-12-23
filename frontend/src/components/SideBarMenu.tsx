@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { useUserData } from '../hooks/useUserData';
 import { MENU_ITEMS } from '../constants';
 import { Menu, X } from 'lucide-react';
+import type { User } from '../types';
+
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false); // Controls import './index.css';rawer ONLY
-  const { data, isLoading, isError } = useUserData();
-
-  if (isLoading) return <div className="w-64 bg-white border-r h-screen p-4">Loading Profile...</div>;
-  if (isError) return <div className="w-64 bg-white border-r h-screen p-4 text-red-500">Error</div>;
+  const  user:User= useUserData();
+ 
 
 return (
   <>
@@ -54,10 +54,10 @@ return (
         {/* User Profile Footer */}
         <div className="p-4 border-t border-gray-50 ">
           <div className="flex items-center p-2 rounded-xl bg-gray-50">
-            <img src={data?.avatar} className="w-9 h-9 rounded-full border border-white" alt="User" />
+            <img src={''} className="w-9 h-9 rounded-full border border-white" alt="User" />
             <div className="ml-3 overflow-hidden">
-              <p className="text-xs font-bold text-gray-700 truncate">{data?.name}</p>
-              <p className="text-[10px] text-gray-400 uppercase tracking-wider">{data?.role}</p>
+              <p className="text-xs font-bold text-gray-700 truncate">{user?.name}</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wider">{user?.role}</p>
             </div>
           </div>
         </div>
@@ -99,10 +99,10 @@ return (
         {/* User Profile Footer */}
         <div className="p-4 border-t border-gray-50 shrink-0">
           <div className="flex items-center p-2 rounded-xl bg-gray-50">
-            <img src={data?.avatar} className="w-9 h-9 rounded-full border border-white" alt="User" />
+            <img src={''} className="w-9 h-9 rounded-full border border-white" alt="User" />
             <div className="ml-3 overflow-hidden">
-              <p className="text-xs font-bold text-gray-700 truncate">{data?.name}</p>
-              <p className="text-[10px] text-gray-400 uppercase tracking-wider">{data?.role}</p>
+              <p className="text-xs font-bold text-gray-700 truncate">{user.name}</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-wider">{user.role}</p>
             </div>
           </div>
         </div>

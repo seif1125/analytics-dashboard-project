@@ -31,7 +31,7 @@ export const AudienceMetricsChart = () => {
   if (isLoading || !data) return <div className="h-80 animate-pulse bg-slate-50 rounded-xl" />;
 
   return (
-    <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
+    <div className="bg-white mr-6 ml-6 p-6 rounded-xl border border-slate-100 shadow-sm">
       <div className="flex justify-between items-center mb-6">
         <div>
           <h3 className="text-slate-900 font-bold text-lg">Platform Analytics</h3>

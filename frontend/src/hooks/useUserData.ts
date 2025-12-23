@@ -1,11 +1,6 @@
-import { useQuery } from '@tanstack/react-query';
-import { getUser } from '../utils';
+import type { User } from '../types/index';
 
 export const useUserData = () => {
  
-  return useQuery({
-    queryKey: ['user-data'],
-    queryFn: getUser,
-    staleTime: 1000 * 60 * 60 * 6, 
-  });
+  return JSON.parse(localStorage.getItem('user')!) as User;
 };

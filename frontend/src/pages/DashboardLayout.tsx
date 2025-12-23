@@ -9,6 +9,7 @@ import  { TopReferrals } from '../components/TopReferrals';
 import { DevicesChart } from '../components/DevicesChart';
 import { CountryVisitors } from '../components/CountryVisitors';
 import { AudienceMetricsChart } from '../components/AudienceMetricsChart';
+import { Campaigns } from '../components/Campaigns';
 
 // 1. Lazy load the RetentionChart component
 const LazyRetentionChart = React.lazy(() => import('../components/RetentionChart'));
@@ -28,11 +29,13 @@ function DashboardLayout() {
           <CountryVisitors/>
         </div>
         <AudienceMetricsChart />
+
         <LazyRetentionChart />
+        <Campaigns />
         <DownloadsChart />
         </div>
           
-          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm h-full flex flex-col gap-8">
+          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm mb-4 flex flex-col gap-8">
             <BrowserInsights/>
             <UsersTimeHeatmap/>
             <TopReferrals/>

@@ -9,6 +9,8 @@ import { getDeviceSessions } from '../controller/DeviceController';
 import {getCountryVisitors} from '../controller/CountryVisitorsController';
 import { getAudienceMetrics } from '../controller/AudienceMetricsController';
 import { login } from '../controller/AuthController';
+import { getCampaigns ,deleteCampaign} from '../controller/CampaignController';
+
 
 const router = Router();
 router.get('/stats', getStats);
@@ -19,4 +21,6 @@ router.get('/devices',getDeviceSessions);
 router.get('/visitors',getCountryVisitors);
 router.get('/audience-metrics',getAudienceMetrics);
 router.post('/login', login);
+router.get('/campaigns',getCampaigns)
+router.delete('/campaigns/:id', deleteCampaign);
 export default router;

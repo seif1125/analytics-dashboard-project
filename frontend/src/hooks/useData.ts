@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getAudienceMetricsData, getCountryVisitorsData, getDevicesData, getHeatmapStats, getInsights, getStats , getHeatmapStats as getTopReferrals} from '../utils';
-import type { CountriesStats, ReferralStats } from '../types';
+import { getAudienceMetricsData, getCampaigns, getCountryVisitorsData, getDevicesData, getHeatmapStats, getInsights, getStats , getTopReferrals} from '../utils';
+import type {  ReferralStats } from '../types';
 
 export const useUserData = () => {
  
@@ -66,4 +66,11 @@ export const useAudienceMetricsData = () => {
   });
 };
 
-  
+export const useCampaigns = () => {
+  return useQuery({
+    queryKey: ['campaigns'],
+    queryFn: getCampaigns,
+    // Keep data fresh for 1 minute
+    staleTime: 1000 * 60, 
+  });
+};

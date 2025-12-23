@@ -15,14 +15,14 @@ const seed = async () => {
       {
         name: "Seif Ammar",
         email: "seif@admin.com",
-        password: "AdminPassword123",
+        password: "seif1234",
         role: "admin",
         image: "seif.png"
       },
       {
-        name: "Sarah Chen",
-        email: "sarah@admin.com",
-        password: "AdminPassword123",
+        name: "Super App",
+        email: "superapp@admin.com",
+        password: "superapp1234",
         role: "admin",
         image: "sarah.png"
       },
@@ -30,28 +30,28 @@ const seed = async () => {
       {
         name: "Omar Khaled",
         email: "omar@company.com",
-        password: "UserPassword123",
+        password: "Userpassword123",
         role: "employee",
         image: "omar.png"
       },
       {
         name: "Layla Hassan",
         email: "layla@company.com",
-        password: "UserPassword123",
+        password: "Userpassword123",
         role: "employee",
         image: "layla.png"
       },
       {
         name: "James Wilson",
         email: "james@company.com",
-        password: "UserPassword123",
+        password: "Userpassword123",
         role: "employee",
         image: "james.png"
       },
       {
         name: "Maria Garcia",
         email: "maria@company.com",
-        password: "UserPassword123",
+        password: "Userpassword123",
         role: "employee",
         image: "maria.png"
       }

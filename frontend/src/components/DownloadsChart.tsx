@@ -19,7 +19,7 @@ const DownloadsChart: React.FC = () => {
   }
 
   return (
-    <div className="p-6 mt-5 bg-white rounded-lg shadow-xl  min-h-[450px]">
+    <div className="p-6 mx-6  mt-5 bg-white rounded-lg shadow-xl  min-h-[450px]">
       <h3 className="text-lg text-gray-900 font-medium text-start mb-4">Daily Application Downloads</h3>
       <ResponsiveContainer className="!h-[400px] !min-h-[200px]! border rounded-lg" >
         <LineChart
