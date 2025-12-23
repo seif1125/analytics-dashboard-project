@@ -17,14 +17,16 @@ const StatCardsData = React.lazy(() => import('../components/StatCardsData').the
 
 function DashboardLayout() {
  return (
-<div className="flex min-h-screen bg-gray-50">
+<div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
     <Sidebar />
-    <main className="flex-1 flex flex-col space-y-8 ">
-        <div className="flex md:flex-row flex-col flex-grow flex-1 space-y-8 max-w-7xl mx-auto w-full">
-         <Suspense fallback={<div className="p-4 bg-white rounded shadow h-full">Loading ...</div>}>
+    <Suspense fallback={<div className="p-4  bg-white rounded shadow h-full">Loading ...</div>}>
+    <main className="flex-1 flex xl:flex-row flex-col pb-6 space-y-8 overflow-x-hidden w-full  ">
+ 
+        <div className="flex xl:flex-row flex-col flex-grow flex-1 space-y-8 max-w-7xl mx-auto w-full">
+         
         <div className="flex flex-col flex-1 space-y-8">
         <StatCardsData/>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 p-6'>
+        <div className='grid grid-cols-1 xl:grid-cols-2 gap-6 p-6'>
           <DevicesChart/>
           <CountryVisitors/>
         </div>
@@ -35,16 +37,19 @@ function DashboardLayout() {
         <DownloadsChart />
         </div>
           
-          <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm mb-4 flex flex-col gap-8">
+         
+          
+          </div>
+          <div className="bg-white p-3 mx-6 sm:mx-0 sm:pt-6 sm:px-6 rounded-xl border border-slate-100 shadow-sm  flex flex-col gap-8">
             <BrowserInsights/>
             <UsersTimeHeatmap/>
             <TopReferrals/>
-          </div>
-          
-          
-        </Suspense>
-        </div>
+      </div>
+     
     </main>
+     
+        </Suspense>
+      
 </div>
   );
 }

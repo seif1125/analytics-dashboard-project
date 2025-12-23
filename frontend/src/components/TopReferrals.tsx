@@ -12,7 +12,7 @@ export const TopReferrals = () => {
   if (error || !data || !data.pages) return null;
 
   return (
-    <div className="bg-white p-6 rounded-xl border border-slate-100 shadow-sm w-80">
+    <div className="bg-white p-6 mx-auto rounded-xl border border-slate-100 shadow-sm w-80">
       <h3 className="text-slate-900 font-bold text-lg mb-6">Top Referral Pages</h3>
       
       <div className="mb-4">
