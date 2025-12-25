@@ -72,7 +72,7 @@ export const Campaigns = () => {
                 <td className="px-6 py-4">
                   <div className="flex items-center">
                     <img 
-                      src={camp.provider?.image || '/default-avatar.png'} 
+                      src={camp.provider?.image || '/default_avatar.png'} 
                       className="w-10 h-10 rounded-lg object-cover shadow-sm"
                       alt=""
                     />
