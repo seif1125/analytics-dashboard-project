@@ -38,7 +38,27 @@ export const StatCardsData = () => {
     fetchStats();
   }, []);
 
-  if (loading) return <div className="p-6 animate-pulse h-[550px] text-slate-400">Loading Dashboard...</div>;
+  if (loading) return (
+    <section className="p-6 space-y-6">
+      {/* Title Placeholder */}
+      <div className="h-8 w-48 bg-slate-100 rounded animate-pulse"></div>
+      
+      {/* Grid Placeholder - Matches your xl:grid-cols-2 */}
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        {[...Array(4)].map((_, i) => (
+          <div key={i} className="bg-white p-6 rounded-xl border border-slate-100 h-32 animate-pulse">
+            <div className="flex gap-4">
+              <div className="w-12 h-12 bg-slate-100 rounded-lg"></div>
+              <div className="flex-1 space-y-3">
+                <div className="h-4 bg-slate-100 w-1/4 rounded"></div>
+                <div className="h-8 bg-slate-100 w-1/2 rounded"></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 
   return (
     <section className="p-6 space-y-6">

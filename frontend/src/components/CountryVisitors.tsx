@@ -4,7 +4,17 @@ import { useCountriesData } from "../hooks/useData";
 export const CountryVisitors = () => {
   const { data, isLoading, error, isFetching } = useCountriesData();
 
-  if (isLoading) return <div className="h-96 animate-pulse bg-slate-50 rounded-xl w-full" />;
+  if (isLoading) return (
+    <div className="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full min-h-[500px] animate-pulse">
+      <div className="p-6 h-16 border-b border-slate-50"></div> {/* Header Placeholder */}
+      <div className="h-10 bg-slate-50/50"></div> {/* Table Header Placeholder */}
+      <div className="flex-1 p-6 space-y-4">
+        {[...Array(6)].map((_, i) => (
+          <div key={i} className="h-8 bg-slate-50 rounded w-full"></div>
+        ))}
+      </div>
+    </div>
+  );
   if (error || !data) return null;
 
   return (
@@ -39,6 +49,9 @@ export const CountryVisitors = () => {
                   src={`/flags/${item.isoCode.toLowerCase()}.svg`} 
                   alt={item.name}
                   className="w-full h-full object-cover"
+                  width="24"  
+  height="16" 
+  loading="lazy"
                   onError={(e) => { e.currentTarget.src = '/flags/placeholder.png'; }}
                 />
               </div>
