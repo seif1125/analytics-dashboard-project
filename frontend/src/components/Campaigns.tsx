@@ -47,7 +47,7 @@ export const Campaigns = () => {
   if (isError) return <div className="p-8 text-center text-red-500">Error loading data.</div>;
 
   return (
-    <section className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+    <section className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 overflow-hidden">
       <div className="p-6 flex justify-between items-center border-b border-slate-50">
         <h2 className="text-xl font-bold text-slate-800">Top Campaigns</h2>
         <button className="flex items-center text-sm text-slate-400 hover:text-indigo-600 transition-colors">
