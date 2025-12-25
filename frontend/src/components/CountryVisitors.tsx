@@ -36,10 +36,10 @@ export const CountryVisitors = () => {
             <div className="flex items-center gap-4">
               <div className="w-6 h-4 overflow-hidden rounded-sm shadow-sm bg-slate-100 shrink-0">
                 <img 
-                  src={`/src/assets/flags/${item.isoCode.toLowerCase()}.svg`} 
+                  src={`/flags/${item.isoCode.toLowerCase()}.svg`} 
                   alt={item.name}
                   className="w-full h-full object-cover"
-                  onError={(e) => { e.currentTarget.src = '/src/assets/flags/placeholder.png'; }}
+                  onError={(e) => { e.currentTarget.src = '/flags/placeholder.png'; }}
                 />
               </div>
               <span className="text-slate-700 font-bold text-sm tracking-tight">{item.name}</span>
