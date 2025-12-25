@@ -37,10 +37,10 @@ return (
       <div className="flex flex-col h-full">
         {/* Logo Section */}
         <div className="h-20 flex items-center px-6 border-b border-gray-50 shrink-0">
-          <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-xl italic">V</span>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+            <img src="./icon.png" alt="icon" width={50} height={50} />
           </div>
-          <span className="ml-4 font-bold text-xl text-indigo-900 tracking-tight uppercase">Vyzor</span>
+          <span className="ml-4 font-bold text-xl text-indigo-900 tracking-tight uppercase">NEXUS</span>
         </div>
 
         {/* Navigation Items - Labels are always rendered */}
@@ -95,7 +95,7 @@ return (
           <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
             X
           </div>
-          <span className="ml-12 font-bold text-xl text-indigo-900 tracking-tight uppercase">Vyzor</span>
+          <span className="ml-12 font-bold text-xl text-indigo-900 tracking-tight uppercase">NEXUS</span>
         </div>
 
         {/* Navigation Items - Labels are always rendered */}
