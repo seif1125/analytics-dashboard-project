@@ -1,7 +1,7 @@
 import {  Trash2, ChevronDown } from 'lucide-react';
 import { useCampaigns } from '../hooks/useData';
 import { useQueryClient, useMutation } from '@tanstack/react-query';
-
+import defaultAvatar from '../assets/default_avatar.png'
 export const Campaigns = () => {
   const queryClient = useQueryClient();
   const { data: campaigns, isLoading, isError } = useCampaigns();
@@ -72,7 +72,7 @@ export const Campaigns = () => {
                 <td className="px-6 py-4">
                   <div className="flex items-center">
                     <img 
-                      src={camp.provider?.image || '/src/assets/default_avatar.png'} 
+                      src={camp.provider?.image || defaultAvatar} 
                       className="w-10 h-10 rounded-lg object-cover shadow-sm"
                       alt=""
                     />
