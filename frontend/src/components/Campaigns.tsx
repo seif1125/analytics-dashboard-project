@@ -74,7 +74,7 @@ export const Campaigns = () => {
                     <img 
                       src={camp.provider?.image || '/default_avatar.png'} 
                       className="w-10 h-10 rounded-lg object-cover shadow-sm"
-                      alt=""
+                      alt="provider name"
                     />
                     <div className="ml-3">
                       <p className="text-sm font-bold text-slate-700">{camp.provider?.name}</p>

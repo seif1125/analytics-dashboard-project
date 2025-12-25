@@ -47,7 +47,7 @@ export const CountryVisitors = () => {
               <div className="w-6 h-4 overflow-hidden rounded-sm shadow-sm bg-slate-100 shrink-0">
                 <img 
                   src={`/flags/${item.isoCode.toLowerCase()}.svg`} 
-                  alt={item.name}
+                  alt={item.name+" flag"}
                   className="w-full h-full object-cover"
                   width="24"  
   height="16" 
