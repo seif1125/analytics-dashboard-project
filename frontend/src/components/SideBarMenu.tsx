@@ -38,7 +38,7 @@ return (
         {/* Logo Section */}
         <div className="h-20 flex items-center px-6 border-b border-gray-50 shrink-0">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-            <img src="./icon.png" alt="icon" width={50} height={50} />
+            <img src="./icon.png" alt="Nexus logo" width={50} height={50} />
           </div>
           <span className="ml-4 font-bold text-xl text-indigo-900 tracking-tight uppercase">NEXUS</span>
         </div>

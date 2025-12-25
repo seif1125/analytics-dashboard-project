@@ -16,6 +16,12 @@ const AudienceMetricsChart=React.lazy(() => import('../components/AudienceMetric
 const Campaigns=React.lazy(() => import('../components/Campaigns').then(module => ({ default: module.Campaigns }))); 
 function DashboardLayout() {
  return (
+  <>
+  
+      <title>Nexus Analytics | Real-Time Data Dashboard</title>
+      <meta name="description" content="Monitor your global traffic with Nexus Analytics. High-performance, real-time visitor tracking with zero layout shift." />
+      <link rel="canonical" href="https://analytics-dashboard-project.vercel.app/dashboard" />
+  
 <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
     <Sidebar />
     <Suspense fallback={<div className="p-4  bg-white rounded shadow h-full">Loading ...</div>}>
@@ -49,7 +55,7 @@ function DashboardLayout() {
      
         </Suspense>
       
-</div>
+</div> </>
   );
 }
 export default DashboardLayout;

@@ -36,6 +36,11 @@ export const Login = () => {
   };
 
   return (
+    <>
+    <title>Nexus Analytics | Login to Nexus Dashboard</title>
+      <meta name="description" content="Monitor your global traffic with Nexus Analytics. High-performance, real-time visitor tracking with zero layout shift." />
+      <link rel="canonical" href="https://analytics-dashboard-project.vercel.app/login" />
+  
     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
         <div className="text-center mb-8">
@@ -83,5 +88,6 @@ export const Login = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };

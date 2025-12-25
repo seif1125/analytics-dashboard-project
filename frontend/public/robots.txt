@@ -1,0 +1,13 @@
+# Allow all crawlers
+User-agent: *
+
+# Allow crawling of the main site
+Allow: /
+
+# Block sensitive or private dashboard routes
+Disallow: /api/
+Disallow: /settings/
+Disallow: /private/
+
+# Link to your sitemap
+Sitemap: https://analytics-dashboard-project.vercel.app/sitemap.xml
