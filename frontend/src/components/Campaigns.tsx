@@ -5,7 +5,7 @@ import { useQueryClient, useMutation } from '@tanstack/react-query';
 export const Campaigns = () => {
   const queryClient = useQueryClient();
   const { data: campaigns, isLoading, isError } = useCampaigns();
-console.log(campaigns);
+
   // 1. Define the Delete Mutation
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
@@ -72,7 +72,7 @@ console.log(campaigns);
                 <td className="px-6 py-4">
                   <div className="flex items-center">
                     <img 
-                      src={camp.provider?.image || '/default_avatar.png'} 
+                      src={camp.provider?.image || '/src/assets/default_avatar.png'} 
                       className="w-10 h-10 rounded-lg object-cover shadow-sm"
                       alt=""
                     />

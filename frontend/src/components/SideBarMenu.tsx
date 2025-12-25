@@ -64,7 +64,7 @@ return (
         <div className="p-4 border-t border-gray-50 ">
           <div className="flex justify-between items-center p-2 rounded-xl bg-gray-50">
             <div className='flex '> 
-            <img src={''} className="w-9 h-9 rounded-full border border-white" alt="User" />
+            <img src={user.image} className="w-9 h-9 rounded-full border border-white" alt="User" />
             <div className="ml-3 overflow-hidden">
               <p className="text-xs font-bold text-gray-700 truncate">{user?.name}</p>
               <p className="text-[10px] text-gray-400 uppercase tracking-wider">{user?.role}</p>
@@ -119,7 +119,7 @@ return (
         <div className="p-4 border-t border-gray-800shrink-0 ">
           <div className="flex justify-between items-center p-2 rounded-xl bg-none text-indigo-900">
             <div className='flex'>
-              <img src={''} className="w-9 h-9 rounded-full border border-white" alt="User" />
+              <img src={user.image} className="w-9 h-9 rounded-full border border-white" alt="User" />
             <div className="ml-3 overflow-hidden">
               <p className="text-xs font-bold truncate">{user.name}</p>
               <p className="text-[10px] uppercase tracking-wider">{user.role}</p>

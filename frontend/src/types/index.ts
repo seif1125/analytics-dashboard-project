@@ -16,7 +16,7 @@ export interface User {
     id: number|string,
     name: string,
     role: string,
-    avatar: string // Replace with your image
+    image: string // Replace with your image
   }
 
 
