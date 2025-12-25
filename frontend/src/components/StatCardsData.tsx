@@ -38,7 +38,7 @@ export const StatCardsData = () => {
     fetchStats();
   }, []);
 
-  if (loading) return <div className="p-6 animate-pulse text-slate-400">Loading Dashboard...</div>;
+  if (loading) return <div className="p-6 animate-pulse h-[550px] text-slate-400">Loading Dashboard...</div>;
 
   return (
     <section className="p-6 space-y-6">

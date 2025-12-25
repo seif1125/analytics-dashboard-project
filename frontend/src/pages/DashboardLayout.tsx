@@ -3,18 +3,17 @@ import React, { Suspense } from 'react'; // Import React and Suspense
 import DownloadsChart from '../components/DownloadsChart';
 
 import Sidebar from '../components/SideBarMenu';
-import { BrowserInsights } from '../components/BrowserInsights';
-import { UsersTimeHeatmap } from '../components/UsersTimeHeatmap';
-import  { TopReferrals } from '../components/TopReferrals';
-import { DevicesChart } from '../components/DevicesChart';
-import { CountryVisitors } from '../components/CountryVisitors';
-import { AudienceMetricsChart } from '../components/AudienceMetricsChart';
-import { Campaigns } from '../components/Campaigns';
 
 // 1. Lazy load the RetentionChart component
 const LazyRetentionChart = React.lazy(() => import('../components/RetentionChart'));
 const StatCardsData = React.lazy(() => import('../components/StatCardsData').then(module => ({ default: module.StatCardsData })));
-
+const DevicesChart=React.lazy(() => import('../components/DevicesChart').then(module => ({ default: module.DevicesChart })));
+const CountryVisitors=React.lazy(() => import('../components/CountryVisitors').then(module => ({ default: module.CountryVisitors })));
+const BrowserInsights=React.lazy(() => import('../components/BrowserInsights').then(module => ({ default: module.BrowserInsights })));
+const UsersTimeHeatmap=React.lazy(() => import('../components/UsersTimeHeatmap').then(module => ({ default: module.UsersTimeHeatmap })));
+const TopReferrals=React.lazy(() => import('../components/TopReferrals').then(module => ({ default: module.TopReferrals })));
+const AudienceMetricsChart=React.lazy(() => import('../components/AudienceMetricsChart').then(module => ({ default: module.AudienceMetricsChart }))); 
+const Campaigns=React.lazy(() => import('../components/Campaigns').then(module => ({ default: module.Campaigns }))); 
 function DashboardLayout() {
  return (
 <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
